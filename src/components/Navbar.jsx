@@ -28,8 +28,8 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#080d1f]/85 backdrop-blur-xl">
-      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 text-white">
+     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#080d1f]/85 px-6 text-white backdrop-blur-xl sm:px-8 lg:px-12 xl:px-20">
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between">
         <a href="#" className="inline-flex items-center">
           <img
             src="https://pyramidci.com/wp-content/uploads/2025/08/Frame-1973341695.svg"

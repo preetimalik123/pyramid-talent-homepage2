@@ -16,7 +16,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: "easeOut" }}
-          className="relative z-10 w-full lg:w-[520px] lg:shrink-0 p-10 lg:pl-20"
+          className="relative z-10 w-full lg:w-[520px] lg:shrink-0 p-10 lg:pl-20 2xl:pl-0"
         >
         
 
