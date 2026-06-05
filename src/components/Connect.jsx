@@ -33,8 +33,8 @@ export default function Connect() {
     >
       <div className="mx-auto max-w-7xl">
         <div className="mb-10">
-        
-            <SectionTitle> Choose your path</SectionTitle>
+
+          <SectionTitle> Choose your path</SectionTitle>
         </div>
 
         <div className="grid gap-5 lg:grid-cols-2">
@@ -65,6 +65,8 @@ function ConnectCard({ path, index }) {
       <img
         src={path.image}
         alt={path.imageAlt}
+        width="600"
+        height="400"
         className="absolute inset-0 h-full w-full object-cover opacity-45 transition duration-700 group-hover:scale-105 group-hover:opacity-35"
       />
 

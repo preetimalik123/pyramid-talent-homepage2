@@ -76,11 +76,13 @@ export default function FooterAnimate() {
           <Particles />
         </Canvas>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 px-6 pb-6 md:px-10 md:pb-8">
+<div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 px-6 pb-6 md:px-10 md:pb-8">
   <img
     src="https://pyramidci.com/wp-content/uploads/2025/08/Frame-1973341695.svg"
     alt="Pyramid Talent"
-    className="mx-auto w-full max-w-[980px] opacity-90"
+    width="980"
+    height="120"
+    className="mx-auto h-auto w-full max-w-[980px] opacity-90"
   />
 </div>
       </div>

@@ -16,7 +16,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: "easeOut" }}
-          className="relative z-10 w-full lg:w-[520px] lg:shrink-0 p-10 md:pl-20"
+          className="relative z-10 w-full lg:w-[520px] lg:shrink-0 p-10 lg:pl-20"
         >
         
 
@@ -37,7 +37,7 @@ export default function HeroSection() {
                 href={link.href}
                 className={
                   link.variant === "primary"
-                    ? "rounded-xl bg-violet-500 px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-violet-400"
+                    ? "rounded-xl bg-violet-700 px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-violet-600"
                     : "rounded-xl border border-violet-400/60 px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-violet-400/10"
                 }
               >

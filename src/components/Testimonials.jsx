@@ -136,7 +136,7 @@ function SectionHeader({ currentSlide }) {
 function TestimonialSlide({ testimonial }) {
   return (
     <div className="flex flex-col-reverse items-center gap-10 lg:flex-row lg:gap-0">
-      <div className="relative z-10 w-full text-center lg:w-[58%] lg:text-left pr-20">
+      <div className="relative z-10 w-full text-center lg:w-[58%] lg:text-left px-10 lg: pl-0 lg:pr-20">
         <div className="mx-auto max-w-3xl bg-[url('https://alcs-slider.netlify.app/images/pattern-quotes.svg')] bg-[length:72px] bg-top bg-no-repeat pt-12 lg:mx-0 lg:translate-x-16 lg:bg-[position:80px_0] lg:bg-[length:88px]">
           <span className="mb-6 inline-flex rounded-full border border-violet-400/30 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-violet-300">
             {testimonial.type}

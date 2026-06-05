@@ -34,6 +34,8 @@ export default function Navbar() {
           <img
             src="https://pyramidci.com/wp-content/uploads/2025/08/Frame-1973341695.svg"
             alt="Pyramid Talent"
+            width="180"
+            height="32"
             className="h-9 w-auto"
           />
         </a>
@@ -120,7 +122,7 @@ function ActionLink({ href, isPrimary, mobile = false, onClick, children }) {
     : "rounded-full px-5 py-3 text-sm font-semibold transition";
 
   const styleClass = isPrimary
-    ? "bg-violet-500 text-white hover:bg-violet-400"
+    ? "bg-violet-700 text-white hover:bg-violet-600"
     : "border border-white/15 text-white/75 hover:border-violet-400/50 hover:text-white";
 
   return (
