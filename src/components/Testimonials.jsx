@@ -160,6 +160,8 @@ function TestimonialSlide({ testimonial }) {
           <img
             src={testimonial.image}
             alt="testimonial"
+            width = {450}
+            height = {675}
             className="mx-auto h-[280px] w-[280px] rounded-2xl object-cover shadow-2xl md:h-[350px] md:w-[300px]"
           />
         </div>
