@@ -47,7 +47,7 @@ export default function Footer() {
               Pyramid Talent
             </a>
 
-            <p className="mt-4 max-w-md text-sm leading-7 text-white/55">
+            <p className="mt-4 max-w-md text-sm leading-7 text-white/85">
               Global talent solutions designed to connect industry leaders with
               skilled professionals across the world.
             </p>
@@ -66,7 +66,7 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-white/10 pt-6">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            <p className="text-sm text-white/45">
+            <p className="text-sm text-white/85">
               © 2026 Pyramid Consulting, Inc. All rights reserved.
             </p>
 
@@ -75,7 +75,7 @@ export default function Footer() {
                 <a
                   key={link}
                   href="#"
-                  className="text-xs text-white/45 transition hover:text-violet-300"
+                  className="text-xs text-white/85 transition hover:text-violet-300"
                 >
                   {link}
                 </a>
@@ -100,7 +100,7 @@ function FooterColumn({ column }) {
           <li key={link.label}>
             <a
               href={link.href}
-              className="text-sm text-white/58 transition hover:text-white"
+              className="text-sm text-white/85 transition hover:text-white"
             >
               {link.label}
             </a>
@@ -116,7 +116,7 @@ function SocialLink({ link }) {
     <a
       href={link.href}
       aria-label={link.label}
-      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-white/65 transition hover:border-violet-300/50 hover:bg-violet-500/15 hover:text-white"
+      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-white/85 transition hover:border-violet-300/50 hover:bg-violet-500/15 hover:text-white"
     >
       {link.label}
     </a>

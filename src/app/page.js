@@ -15,7 +15,7 @@ import Image from "next/image";
 export default function HomePage() {
   return (
     <div className="relative bg-[#080d1f]">
-    <main className="relative z-10 mb-[520px] min-h-screen bg-[#080d1f] text-white">
+    <main className="relative z-10 lg:mb-[520px] min-h-screen bg-[#080d1f] text-white">
 
 <Navbar/>
 <HeroSection/>

@@ -3,7 +3,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 
-const PARTICLE_COUNT = 360;
+const PARTICLE_COUNT = 300;
 
 function Particles() {
   const groupRef = useRef(null);
@@ -67,7 +67,7 @@ function Particles() {
 
 export default function FooterAnimate() {
   return (
-    <section className="fixed inset-x-0 bottom-0 z-0 h-[520px] overflow-hidden bg-[#080d1f] px-6 text-white sm:px-8 lg:px-12 xl:px-20">
+    <section className="fixed inset-x-0 bottom-0 z-0 h-[520px] overflow-hidden bg-[#080d1f] px-6 text-white hidden  lg:block lg:px-12 xl:px-20">
       <div className="mx-auto h-full max-w-7xl">
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-violet-500/35 blur-3xl" />
         <div className="absolute -bottom-32 left-10 h-96 w-96 rounded-full bg-fuchsia-500/20 blur-3xl" />
@@ -76,13 +76,13 @@ export default function FooterAnimate() {
           <Particles />
         </Canvas>
 
-<div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[70px] px-6 pb-5 sm:h-[90px] md:h-[120px] md:px-10 md:pb-8">
+<div className="pointer-events-none absolute inset-x-0 bottom-8 z-10 h-[150px] px-6 md:h-[190px] md:px-10">
   <img
     src="https://pyramidci.com/wp-content/uploads/2025/08/Frame-1973341695.svg"
     alt="Pyramid Talent"
-    width={980}
-    height={120}
-    className="mx-auto h-full w-full max-w-[980px] object-contain opacity-90"
+    width={1400}
+    height={220}
+    className="mx-auto h-full w-full max-w-[1250px] object-contain opacity-90"
   />
 </div>
       </div>
