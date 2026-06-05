@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import SectionTitle from "./SectionTitle";
@@ -81,7 +82,6 @@ export default function Testimonials() {
     if (!emblaApi) return;
 
     updateSlide(emblaApi);
-
     emblaApi.on("select", updateSlide);
     emblaApi.on("reInit", updateSlide);
 
@@ -123,8 +123,7 @@ export default function Testimonials() {
 function SectionHeader({ currentSlide }) {
   return (
     <div className="mb-12 flex items-center justify-between gap-6">
-      
-         <SectionTitle>  Client & Consultant Testimonials</SectionTitle>
+      <SectionTitle>Client & Consultant Testimonials</SectionTitle>
 
       <p className="hidden text-sm text-white/45 md:block">
         {currentSlide + 1} / {testimonials.length}
@@ -136,14 +135,14 @@ function SectionHeader({ currentSlide }) {
 function TestimonialSlide({ testimonial }) {
   return (
     <div className="flex flex-col-reverse items-center gap-10 lg:flex-row lg:gap-0">
-      <div className="relative z-10 w-full text-center lg:w-[58%] lg:text-left px-10 lg:pl-0 lg:pr-20">
+      <div className="relative z-10 w-full px-6 text-center lg:w-[58%] lg:px-0 lg:pr-20 lg:text-left">
         <div className="mx-auto max-w-3xl bg-[url('https://alcs-slider.netlify.app/images/pattern-quotes.svg')] bg-[length:72px] bg-top bg-no-repeat pt-12 lg:mx-0 lg:translate-x-16 lg:bg-[position:80px_0] lg:bg-[length:88px]">
           <span className="mb-6 inline-flex rounded-full border border-violet-400/30 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-violet-300">
             {testimonial.type}
           </span>
 
           <blockquote className="text-base font-light leading-6 text-white/80 md:text-lg md:leading-8">
-            “ {testimonial.quote} ”
+            “{testimonial.quote}”
           </blockquote>
 
           <div className="mt-8 flex flex-col justify-center gap-1 text-base md:flex-row md:gap-3 lg:justify-start">
@@ -157,13 +156,15 @@ function TestimonialSlide({ testimonial }) {
         <div className="absolute inset-0 rounded-3xl bg-violet-500/20 blur-3xl" />
 
         <div className="relative bg-[url('https://alcs-slider.netlify.app/images/pattern-bg.svg')] bg-contain bg-center bg-no-repeat p-8 md:p-12">
-          <img
-            src={testimonial.image}
-            alt="testimonial"
-            width = {450}
-            height = {675}
-            className="mx-auto h-[280px] w-[280px] rounded-2xl object-cover shadow-2xl md:h-[350px] md:w-[300px]"
-          />
+          <div className="relative mx-auto h-[280px] w-[280px] overflow-hidden rounded-2xl shadow-2xl md:h-[350px] md:w-[300px]">
+            <Image
+              src={testimonial.image}
+              alt={`${testimonial.name} testimonial`}
+              fill
+              sizes="(max-width: 768px) 280px, 300px"
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight, BriefcaseBusiness, UsersRound } from "lucide-react";
 import SectionTitle from "./SectionTitle";
@@ -32,12 +33,9 @@ export default function Connect() {
       className="bg-[#080d1f] px-6 py-20 text-white sm:px-8 md:py-24 lg:px-12 xl:px-20"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10">
+        <SectionTitle>Choose your path</SectionTitle>
 
-          <SectionTitle> Choose your path</SectionTitle>
-        </div>
-
-        <div className="grid gap-5 lg:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2 mt-10">
           {paths.map((path, index) => (
             <ConnectCard key={path.title} path={path} index={index} />
           ))}
@@ -62,13 +60,15 @@ function ConnectCard({ path, index }) {
       }}
       className="group relative min-h-[380px] overflow-hidden rounded-3xl border border-white/10 bg-[#0c1228]"
     >
-      <img
-        src={path.image}
-        alt={path.imageAlt}
-        width="600"
-        height="400"
-        className="absolute inset-0 h-full w-full object-cover opacity-45 transition duration-700 group-hover:scale-105 group-hover:opacity-35"
-      />
+      <div className="absolute inset-0">
+        <Image
+          src={path.image}
+          alt={path.imageAlt}
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="object-cover opacity-45 transition duration-700 group-hover:scale-105 group-hover:opacity-35"
+        />
+      </div>
 
       <div className="absolute inset-0 bg-gradient-to-t from-[#080d1f] via-[#080d1f]/85 to-[#080d1f]/35" />
       <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-violet-500/20 blur-3xl" />
@@ -86,7 +86,7 @@ function ConnectCard({ path, index }) {
             {path.label}
           </p>
 
-          <h3 className="text-4xl font-semibold tracking-tight md:text-5xl">
+          <h3 className="text-3xl font-semibold tracking-tight md:text-4xl mt-5">
             {path.title}
           </h3>
 
