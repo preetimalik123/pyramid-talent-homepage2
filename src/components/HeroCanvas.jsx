@@ -1,12 +1,34 @@
 "use client";
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Color, Vector3 } from "three";
 
-const ROWS = 6;
-const COLS = 6;
-const GAP = 1.25;
+const rows = 6;
+const cols = 6;
+const gap = 1.25;
+const desktopQuery = "(min-width: 1024px)";
+
+function useMediaQuery(query) {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+
+    const updateMatch = () => {
+      setMatches(media.matches);
+    };
+
+    updateMatch();
+    media.addEventListener("change", updateMatch);
+
+    return () => {
+      media.removeEventListener("change", updateMatch);
+    };
+  }, [query]);
+
+  return matches;
+}
 
 function TalentBox({ position }) {
   const meshRef = useRef(null);
@@ -46,7 +68,6 @@ function TalentBox({ position }) {
 
 function CameraRig() {
   const { camera, pointer } = useThree();
-
   const target = useMemo(() => new Vector3(), []);
 
   useFrame(() => {
@@ -61,15 +82,15 @@ function CameraRig() {
 
 function TalentGrid() {
   const boxes = useMemo(() => {
-    return Array.from({ length: ROWS * COLS }, (_, index) => {
-      const row = Math.floor(index / COLS);
-      const col = index % COLS;
+    return Array.from({ length: rows * cols }, (_, index) => {
+      const row = Math.floor(index / cols);
+      const col = index % cols;
 
       return {
         id: `${row}-${col}`,
         position: [
-          (col - (COLS - 1) / 2) * GAP,
-          (row - (ROWS - 1) / 2) * GAP,
+          (col - (cols - 1) / 2) * gap,
+          (row - (rows - 1) / 2) * gap,
           0,
         ],
       };
@@ -86,6 +107,10 @@ function TalentGrid() {
 }
 
 export default function HeroCanvas() {
+  const isDesktop = useMediaQuery(desktopQuery);
+
+  if (!isDesktop) return null;
+
   return (
     <div className="absolute inset-0">
       <Canvas camera={{ position: [0, 0, 7], fov: 45 }} dpr={[1, 1.5]}>
